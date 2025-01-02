@@ -1,0 +1,1397 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* ############################### header title ##################################### */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 0 20px;
+  gap: 15px; 
+  
+  
+}
+
+/* header image 4 basecarelogo glow effect add panni iruku color prabir ta ketkanum */
+
+.headerimg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1px;
+}
+
+.headerimg img {
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 0 10px rgba(155, 239, 252, 0.8); 
+  border-radius: 100%; 
+}
+
+
+.title-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-grow: 1;
+  margin-left: 450px;
+  
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin: 0;
+}
+
+.version-number {
+  font-size: 18px;
+  color: #666;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin-left: 10px;
+  letter-spacing: .15em;
+  animation: 
+      typing 3.5s steps(11, end),
+      blink-caret .75s step-end ;
+}
+
+.version-number::before {
+  content: "version 1.0.1";
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 11ch }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(30, 39, 36); }
+}
+
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+/* ################################## left pannnel ################################# */
+.left-panel {
+    flex: 1;
+    max-width: 20%;
+    min-width: 20%;
+}
+/* ############################# right pannnel ############################ */
+.right-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 78%;
+    min-width: 78%;
+    margin-top: 1px;
+
+}
+/* all left pannel selction  */
+.input-section {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+  
+}
+/* unselected error color*/
+.input-section.error {
+    border-color: #ff0000;
+}
+/* ############################### all left pannel headers ########################## */
+h2 {
+    margin-top: 0;
+    color: #444;
+    font-size: 16px;
+}
+
+select, input[type="text"] {
+    width: 97%;
+    padding: 1px;
+    margin-top: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+
+}
+
+.gene-list-section {
+    margin-bottom: 10px;
+}
+
+.sample-list, .gene-list {
+    height: 70px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-top: 5px;
+    line-height: 1.8;/* added space between the  in the left panle 09-08-2024*/
+}
+
+.sample-item, .gene-item {
+    padding: px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.sample-item:hover, .gene-item:hover {
+    background-color: #f0f0f0;
+}
+/*##########################  glowing effect for selected text ########################### */
+.sample-item.selected, .gene-item.selected {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+    transform: scale(1.05);
+    background-color: #e8f2f3;
+}
+
+.input-section.selected {
+    box-shadow: 0 0 10px rgba(0, 94, 128, 0.5);
+    transform: scale(1.02);
+}
+/* ############################  plot buttons  ############################# */
+.plot-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-size: 14px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* plot color transformation*/
+
+button#heatMapBtn, 
+button#barPlotBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button#heatMapBtn.selected, 
+button#barPlotBtn.selected {
+    background-color: #ffff99;
+    color: #333;
+    transform: scale(1.05);
+}
+/*######################### gernerat btn ########################################## */
+#generateBtn {
+    border-radius: 6px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  #generateBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #generateBtn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #generateBtn:hover span {
+    padding-right: 25px;
+  }
+  
+  #generateBtn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+#generateBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+/* ################################ graph display ###################################### */
+.graph-display {
+    height: 600px;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    box-shadow: 0 0 10px rgba(255, 197, 240, 0.5);
+    transform: scale(1.02);
+    background-color: white(144, 238, 144, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 9px;
+}
+/* ##################################### satatus bar  ########################################*/
+.status-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+/* #####################################  log satatus   ########################################*/
+#logStatus {
+    background-color: #fff3cd;
+    padding: 8px;
+    border-radius: 5px;
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    font-size: 18px;
+}
+/* ##################################### result bar     ########################################*/
+.results-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#results {
+    background-color: #e0f7fa;
+    padding: 13px;
+    border-radius: 5px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* ##################################### download button  ########################################*/
+#downloadBtn {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 5px;
+}
+
+#downloadBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;  
+    margin-top: 5px;                      
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+/* ##################################### glowing effect for captuiring kit    ########################################*/
+#capturingKitSection.selected {
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+    transform: scale(1.02);
+    background-color: white(144, 238, 144, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+#capturingKit {
+    transition: all 0.3s ease;
+}
+
+#capturingKit:focus {
+    box-shadow: 0 0 5px rgba(209, 251, 254, 0.5);
+    background-color: rgba(144, 238, 144, 0.1);
+}
+
+/* ##################################### seeclt text glwoing for com,main,gene    ########################################*/
+.sample-item.selected, .gene-item.selected {
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+.sample-item.selected span, .gene-item.selected span {
+    background-color: #e8f2f3;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.processing {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* #####################################  result tab   ########################################*/
+#results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#results th, #results td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: left;
+}
+
+#results th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#results tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#results tr:hover {
+    background-color: #f5f5f5;
+}
+
+.highlight {
+    animation: glow 1s ease-in-out infinite alternate;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.3);
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.6);
+    }
+}
+/* ##################################### results csv boxs    ########################################*/
+
+#results {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.csv-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #84d2f9;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.csv-header {
+    font-weight: bold;
+    color: #0e1740;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 3px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+.csv-value {
+    color: #666;
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Specific styling for each column remove pannanum normal tabkle format vennum */
+.csv-box:nth-child(1) {
+    background-color:#fff;
+    width: 20%;
+}
+
+.csv-box:nth-child(2) {
+    background-color: #fff;
+    width: 30%;
+}
+
+.csv-box:nth-child(3) {
+    background-color: #fff;
+    width: 80%;
+}
+
+.results-bar {
+    margin-top: 1px;
+    width: 100%;
+}
+
+/* ##################################### modal popup for confirmation and user name   ########################################*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-container {
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-container-header {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-container-body {
+    padding: 16px;
+}
+
+.modal-container-footer {
+    padding: 16px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* modal buttons resourve https://codepen.io/havardob/pen/JjrwMRz?editors=0100 inga irunthu eduthathu color change kettu pannum    */
+.modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+#cancelBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#cancelBtn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+#cancelBtn:active {
+    transform: scale(0.95);
+}
+
+#confirmBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#confirmBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#confirmBtn:active {
+    transform: scale(0.95);
+}
+
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+#cancelBtn:focus, #confirmBtn:focus {
+    animation: pulse 1.5s infinite;
+    outline: none;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+#cancelBtn:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+#confirmBtn:hover {
+    animation: bounce 1s ease-in-out;
+}
+
+/* #####################################  loading animation for graph display need to adjust loop after it comfpleed the 5 th time  ########################################*/
+
+.loader {
+    --background: linear-gradient(135deg, #23C4F8, #275EFE);
+    --shadow: rgba(39, 94, 254, 0.28);
+    --text: #6C7486;
+    --page: rgba(255, 255, 255, 0.36);
+    --page-fold: rgba(255, 255, 255, 0.52);
+    --duration: 3s;
+    width: 200px;
+    height: 140px;
+    position: relative;
+  }
+  
+  .loader:before, .loader:after {
+    --r: -6deg;
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    width: 120px;
+    top: 80%;
+    box-shadow: 0 16px 12px var(--shadow);
+    transform: rotate(var(--r));
+  }
+  
+  .loader:before {
+    left: 4px;
+  }
+  
+  .loader:after {
+    --r: 6deg;
+    right: 4px;
+  }
+  
+  .loader div {
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    position: relative;
+    z-index: 1;
+    perspective: 600px;
+    box-shadow: 0 4px 6px var(--shadow);
+    background-image: var(--background);
+  }
+  
+  .loader div ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+  
+  .loader div ul li {
+    --r: 180deg;
+    --o: 0;
+    --c: var(--page);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform-origin: 100% 50%;
+    color: var(--c);
+    opacity: var(--o);
+    transform: rotateY(var(--r));
+    -webkit-animation: var(--duration) ease infinite;
+    animation: var(--duration) ease infinite;
+  }
+  
+  .loader div ul li:nth-child(2) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-2;
+    animation-name: page-2;
+  }
+  
+  .loader div ul li:nth-child(3) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-3;
+    animation-name: page-3;
+  }
+  
+  .loader div ul li:nth-child(4) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-4;
+    animation-name: page-4;
+  }
+  
+  .loader div ul li:nth-child(5) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-5;
+    animation-name: page-5;
+  }
+  
+  .loader div ul li svg {
+    width: 90px;
+    height: 120px;
+    display: block;
+  }
+  
+  .loader div ul li:first-child {
+    --r: 0deg;
+    --o: 1;
+  }
+  
+  .loader div ul li:last-child {
+    --o: 1;
+  }
+  
+  .loader span {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text);
+  }
+  
+  @keyframes page-2 {
+    0% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 1;
+    }
+  
+    35%, 100% {
+      opacity: 0;
+    }
+  
+    50%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  @keyframes page-3 {
+    15% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+  
+    35% {
+      opacity: 1;
+    }
+  
+    50%, 100% {
+      opacity: 0;
+    }
+  
+    65%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  @keyframes page-4 {
+    30% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    65%, 100% {
+      opacity: 0;
+    }
+  
+    80%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  @keyframes page-5 {
+    45% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+  
+    65% {
+      opacity: 1;
+    }
+  
+    80%, 100% {
+      opacity: 0;
+    }
+  
+    95%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+
+/* #####################################  need to chaceck   ########################################*/
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3edf7;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+            -6px -6px 10px -1px rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.btn:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+            inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+            -0.5px -0.5px 0px rgba(255,255,255,1),
+            0.5px 0.5px 0px rgba(0,0,0,0.15),
+            0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: translateY(0.5em);
+}
+
+.btn svg {
+    transition: transform 0.5s;
+    width: 24px;
+    height: 24px;
+}
+
+.btn:hover svg {
+    transform: scale(0.9);
+    fill: #333333;
+}
+
+
+
+/* #####################################  admin button  ######################################## */
+
+.group {
+    position: relative;
+}
+
+.github-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.github-btn svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.2s ease-in-out;
+}
+
+.github-btn:hover svg {
+    transform: scale(1.25);
+    stroke: #3b82f6;
+}
+
+.github-tooltip {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    z-index: 20;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    font-size: 0.875rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.group:hover .github-tooltip {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    background-color: #ffffff;
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+  }
+  
+  .form:hover {
+    transform: scale(1.05);
+    border: 1px solid #e0e0e0;
+  }
+  
+  #heading {
+    text-align: center;
+    margin: 2em;
+    color: #333333;
+    font-size: 1.2em;
+  }
+  
+  .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: #333333;
+    background-color: #f5f5f5;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: #666666;
+  }
+  
+  .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #333333;
+  }
+  
+  .form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+  }
+  
+  .button1 {
+    padding: 0.5em;
+    padding-left: 1.1em;
+    padding-right: 1.1em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .button1:hover {
+    background-color: #45a049;
+  }
+  
+  .button2 {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .button2:hover {
+    background-color: #0b7dda;
+  }
+  
+  .button3 {
+    margin-bottom: 3em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .button3:hover {
+    background-color: #da190b;
+  }
+
+
+  /* #####################################  qus button  ######################################## */
+
+  .faq-button {
+    width: 38px;
+    height: 38px;
+    border-radius: 60%;
+    border: none;
+    background-color: #ffe53b;
+    background-image: linear-gradient(147deg, #fffeff 0%, #ffffff 74%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.151);
+    position: relative;
+  }
+  .faq-button svg {
+    height: 2.5em;
+    fill: rgb(11, 11, 11);
+  }
+  .faq-button:hover svg {
+    animation: jello-vertical 0.7s both;
+  }
+  @keyframes jello-vertical {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    40% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    50% {
+      transform: scale3d(0.85, 1.15, 1);
+    }
+    65% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    75% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -20px;
+    opacity: 0;
+    background-color: #ffe53b;
+    background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+    color: white;
+    padding: 5px 1px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.2s;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+  }
+  
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #ff25f0;
+    background-size: 1000%;
+    background-position: center;
+    transform: rotate(45deg);
+    bottom: -15%;
+    transition-duration: 0.3s;
+  }
+  
+  .faq-button:hover .tooltip {
+    top: -40px;
+    opacity: 1;
+    transition-duration: 0.3s;
+  }
+
+
+  /* ##################################### qus modal for prabir email ######################################## */
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  #closeFaqModal {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }  
+/*username in the modal */
+  .input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 3em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(186, 182, 251, 0.3);
+    transition: 300ms ease-in-out;
+  }
+  
+
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px; /* Adjust this value to change the overall text size */
+  }
+  
+  .results-table th,
+  .results-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .results-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px; /* Smaller font size for headers */
+  }
+  
+  .results-table td {
+    font-size: 13px; /* Slightly smaller font size for data cells */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media screen and (max-width: 20px) {
+    .results-table th,
+    .results-table td {
+      padding: 6px;
+      font-size: 12px;
+    }
+    
+    .results-table th {
+      font-size: 11px;
+    }
+  }
+
+
+ /* ################################ username button in the modal##################################### */
+.username-input {
+    margin-bottom: 1px;
+}
+
+.username-input label {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.username-input .input {
+    width: 93%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.username-input .input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.username-input .input::placeholder {
+    color: #999;
+}
+
+
+
+/* From Uiverse.io by Nawsome */ 
+.continue-application {
+  --color: #090909;
+  --background: #ffffff;
+  
+  --background-hover: #c3c5bb;
+  --background-left: #f6f7f1;
+  --folder: #F3E9CB;
+  --folder-inner: #BEB393;
+  --paper: #FFFFFF;
+  --paper-lines: #BBC1E1;
+  --paper-behind: #E1E6F9;
+  --pencil-cap: #fff;
+  --pencil-top: #275EFE;
+  --pencil-middle: #fff;
+  --pencil-bottom: #5C86FF;
+  --shadow: rgba(13, 15, 25, .2);
+  --font-weight: bold;
+  
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-weight: 500;
+  line-height: 19px;
+  box-shadow: 0 1px 1px rgba(143, 146, 147, 0.5);
+ 
+  -webkit-tap-highlight-color: transparent;
+  padding: 17px 29px 17px 69px;
+  transition: background 0.3s;
+  color: var(--color);
+  background: var(--bg, var(--background));
+}
+
+.continue-application > div {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 53px;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 5px 0 0 5px;
+  background: var(--background-left);
+}
+
+.continue-application > div .folder {
+  width: 23px;
+  height: 27px;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+}
+
+.continue-application > div .folder .top {
+  left: 0;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  transform: translateX(var(--fx, 0));
+  transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.continue-application > div .folder .top svg {
+  width: 24px;
+  height: 27px;
+  display: block;
+  fill: var(--folder);
+  transform-origin: 0 50%;
+  transition: transform 0.3s ease var(--fds, 0.45s);
+  transform: perspective(120px) rotateY(var(--fr, 0deg));
+}
+
+.continue-application > div .folder:before, .continue-application > div .folder:after,
+.continue-application > div .folder .paper {
+  content: "";
+  position: absolute;
+  left: var(--l, 0);
+  top: var(--t, 0);
+  width: var(--w, 100%);
+  height: var(--h, 100%);
+  border-radius: 1px;
+  background: var(--b, var(--folder-inner));
+}
+
+.continue-application > div .folder:before {
+  box-shadow: 0 1.5px 3px var(--shadow), 0 2.5px 5px var(--shadow), 0 3.5px 7px var(--shadow);
+  transform: translateX(var(--fx, 0));
+  transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.continue-application > div .folder:after,
+.continue-application > div .folder .paper {
+  --l: 1px;
+  --t: 1px;
+  --w: 21px;
+  --h: 25px;
+  --b: var(--paper-behind);
+}
+
+.continue-application > div .folder:after {
+  transform: translate(var(--pbx, 0), var(--pby, 0));
+  transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.continue-application > div .folder .paper {
+  z-index: 1;
+  --b: var(--paper);
+}
+
+.continue-application > div .folder .paper:before, .continue-application > div .folder .paper:after {
+  content: "";
+  width: var(--wp, 14px);
+  height: 2px;
+  border-radius: 1px;
+  transform: scaleY(0.5);
+  left: 3px;
+  top: var(--tp, 3px);
+  position: absolute;
+  background: var(--paper-lines);
+  box-shadow: 0 12px 0 0 var(--paper-lines), 0 24px 0 0 var(--paper-lines);
+}
+
+.continue-application > div .folder .paper:after {
+  --tp: 6px;
+  --wp: 10px;
+}
+
+.continue-application > div .pencil {
+  height: 2px;
+  width: 3px;
+  border-radius: 1px 1px 0 0;
+  top: 8px;
+  left: 105%;
+  position: absolute;
+  z-index: 3;
+  transform-origin: 50% 19px;
+  background: var(--pencil-cap);
+  transform: translateX(var(--pex, 0)) rotate(35deg);
+  transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.continue-application > div .pencil:before, .continue-application > div .pencil:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: var(--b, linear-gradient(var(--pencil-top) 55%, var(--pencil-middle) 55.1%, var(--pencil-middle) 60%, var(--pencil-bottom) 60.1%));
+  width: var(--w, 5px);
+  height: var(--h, 20px);
+  border-radius: var(--br, 2px 2px 0 0);
+  top: var(--t, 2px);
+  left: var(--l, -1px);
+}
+
+.continue-application > div .pencil:before {
+  -webkit-clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+  clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+}
+
+.continue-application > div .pencil:after {
+  --b: none;
+  --w: 3px;
+  --h: 6px;
+  --br: 0 2px 1px 0;
+  --t: 3px;
+  --l: 3px;
+  border-top: 1px solid var(--pencil-top);
+  border-right: 1px solid var(--pencil-top);
+}
+
+.continue-application:before, .continue-application:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color);
+  transform-origin: 9px 1px;
+  transform: translateX(var(--cx, 0)) scale(0.5) rotate(var(--r, -45deg));
+  top: 26px;
+  right: 16px;
+  transition: transform 0.3s;
+}
+
+.continue-application:after {
+  --r: 45deg;
+}
+
+.continue-application:hover {
+  --cx: 2px;
+  --bg: var(--background-hover);
+  --fx: -40px;
+  --fr: -60deg;
+  --fd: .15s;
+  --fds: 0s;
+  --pbx: 3px;
+  --pby: -3px;
+  --pbd: .15s;
+  --pex: -24px;
+}
