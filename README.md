@@ -1,5 +1,7 @@
 **Online** https://stable-mainly-collie.ngrok-free.app/WebCNABuilder_V1/
 
+Front end @Nagaraj Back end @Prabir Saha
+
 **🧬DOCUMENTATION FOR CNV TOOL V1.0.1**
 
 📌
