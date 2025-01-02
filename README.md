@@ -29,6 +29,7 @@ USE 75% ZOOM in the browser for better visualization
 </aside>
 
 **Step 1: Select the Capturing KIT**
+
 ![image](https://github.com/user-attachments/assets/ee59e642-fe08-4beb-a72d-3359a0829cf0)
 
 
