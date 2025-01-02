@@ -47,7 +47,8 @@ Step 6:  Check the your selected option are correct. Enter any string, such as y
 
 Step 7: You can take screenshot of the heatmap by clicking screenshot button. and it will download the Image. you can see the summary details table below the log. Status 
 
-![image](https://github.com/user-attachments/assets/bb18b3bb-8840-4c54-a5e3-1a11907f4db8)
+
+![image](https://github.com/user-attachments/assets/8c8ce27d-c377-4754-826a-40311b9476f8)
 
 
 Other buttons:
