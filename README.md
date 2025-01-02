@@ -1,6 +1,6 @@
-
+**Online** https://stable-mainly-collie.ngrok-free.app/WebCNABuilder_V1/
 🧬
-DOCUMENTATION FOR CNV TOOL V1.0.1 
+**DOCUMENTATION FOR CNV TOOL V1.0.1 **
 
 📌
 USE 75% ZOOM in the browser for better visualization
@@ -19,53 +19,53 @@ Don't use comma( , ) in the Comparison sample , search separately
 
 
 
-Step 1: Select the Capturing KIT
+**Step 1**: Select the Capturing KIT
 
 
 
-Step 2: Search for and select your sample of interest or main sample. [Only one sample can be selected here]
-
-
-
-
-Step 3: Search for and select comparison samples. [You can select multiple samples here]
-
-
-Step 4: Search for and select the gene. [Only one gene can be selected at a time]
+**Step 2**: Search for and select your sample of interest or main sample. [Only one sample can be selected here]
 
 
 
 
-Step 5: Click on 'Heatmap' and then 'Generate. if not all option haven't selected Generate button wont appear
+**Step 3**: Search for and select comparison samples. [You can select multiple samples here]
+
+
+**Step 4**: Search for and select the gene. [Only one gene can be selected at a time]
+
+
+
+
+**Step 5**: Click on 'Heatmap' and then 'Generate. if not all option haven't selected Generate button wont appear
 
 ![image](https://github.com/user-attachments/assets/8406145f-f311-42ab-8138-c8a7c1f5cdf0)
 
 
-Step 6:  Check the your selected option are correct. Enter any string, such as your name must be included , and click 'Confirm". to proceed or Cancel to remove all the selection
+**Step 6**:  Check the your selected option are correct. Enter any string, such as your name must be included , and click 'Confirm". to proceed or Cancel to remove all the selection
 
 
 
 
-Step 7: You can take screenshot of the heatmap by clicking screenshot button. and it will download the Image. you can see the summary details table below the log. Status 
+**Step 7**: You can take screenshot of the heatmap by clicking screenshot button. and it will download the Image. you can see the summary details table below the log. Status 
 
 
 ![image](https://github.com/user-attachments/assets/8c8ce27d-c377-4754-826a-40311b9476f8)
 
 
-Other buttons:
+**Other buttons:**
 
-Guide book: open Notion website for this documentation.
+**Guidebook**: open Notion website for this documentation.
 
-Queriers: Contact information for Queries
+**Queriers**: Contact information for Queries
 
-Admin: It is for the Admin who manages this website. login Required 
-
-
+**Admin**: It is for the Admin who manages this website. login Required 
 
 
 
 
-OUTPUT:
+
+
+**OUTPUT:**
 
  
 
