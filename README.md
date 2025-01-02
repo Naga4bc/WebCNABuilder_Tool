@@ -1,4 +1,4 @@
-# WebCNABuilder_Tool
+# DOCUMENTATION FOR CNV TOOL V1.0.1
 
 <aside>
 📌
@@ -30,9 +30,7 @@ USE 75% ZOOM in the browser for better visualization
 
 **Step 1: Select the Capturing KIT**
 
-![image](https://github.com/user-attachments/assets/ee59e642-fe08-4beb-a72d-3359a0829cf0)
-
-
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/74636b91-afcf-4ec6-bdcc-c7eae9ea9a07/6ab1b03a-f674-4ecc-a63a-6e840bd35105/image.png)
 
 **Step 2: Search for and select your sample of interest or main sample. [Only one sample can be selected here]**
 
