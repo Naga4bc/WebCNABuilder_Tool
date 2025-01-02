@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web CNA Builder</title>
+    <link rel="icon" href="4basecare_logo.png">
+    <link rel="stylesheet" href="web_cna_stlye_1.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <!--############################# full container  ############################## -->
+    <div class="container">
+        <!--############################# header  ############################## -->
+        <div class="header">
+            <div class="headerimg">
+            <img src="4basecare_logo.png"  >
+            
+            </div>
+            <div class="title-container">
+                
+                <h1><font color='indianred'>[Testing Phase I]</font>  WebCNABuilder Tool </h1>
+                <h1 class="version-number"></h1>
+            </div>
+            <!--############################# header buttons Queries  ############################## -->
+            <button class="continue-application" onclick="window.open('https://www.notion.so/DOCUMENTATION-FOR-CNV-TOOL-V1-0-1-118e25bdf67e80ef9e2eda4e65d88455?pvs=4', '_blank')">
+            <div>
+                <div class="pencil"></div>
+                <div class="folder">
+                    <div class="top">
+                        <svg viewBox="0 0 24 27">
+                        </svg>
+                    </div>
+                    <div class="paper"></div>
+                </div>
+            </div>
+            Guide Book
+          </button>
+            <div class="button-container">
+                <button class="faq-button" id="faqButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path>
+                  </svg>
+                  <span class="tooltip">Queries</span>
+                </button>
+            </div>
+            <!--############################# Admin button  ############################## -->
+            <div class="group relative">
+                <button class="github-btn">
+                    <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="w-8 hover:scale-125 duration-200 hover:stroke-blue-500">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </button>
+                <span class="github-tooltip">Admin</span>
+                
+                
+            </div>
+            
+        </div>
+
+        <!--############################# main box  ############################## -->
+
+        <div class="main-content">
+
+            <!--############################# left-panel  ############################## -->
+
+            <div class="left-panel">
+                <!--############################# capturingKit  ############################## -->
+
+                <div id="capturingKitSection" class="input-section">
+                    <h2>Capturing KIT</h2>
+                    <select id="capturingKit">
+                        <option value="">Select a kit</option>
+                        <option value="CDS">CDS</option>
+                        <option value="FEV2F2both">FEV2F2both</option>
+                        <option value="CE">CE</option>
+                        <option value="GE">GE</option>
+                        <option value="SE8">SE8</option>
+                        <option value="CEFu">CEFu</option>
+                    </select>
+                </div>
+                <!-- ############################# mainSampleList  ############################## -->
+
+                <div id="mainSampleSection" class="input-section">
+                    <h2>Main Sample</h2>
+                    <input type="text" id="mainSampleSearch" placeholder="Search main samples...">
+                    <div id="mainSampleList" class="sample-list"></div>
+                </div>
+                <!--############################# comparisonSamplesList   ############################## -->
+
+
+                <div id="comparisonSamplesSection" class="input-section">
+                    <h2>Comparison Samples</h2>
+                    <input type="text" id="comparisonSamplesSearch" placeholder="Search comparison samples...">
+                    <div id="comparisonSamplesList" class="sample-list"></div>
+                </div>
+
+                <!--############################# gene-list  ############################## -->
+
+
+                <div class="gene-list-section input-section">
+                    <h2>Gene List</h2>
+                    <input type="text" id="geneSearch" placeholder="Search genes...">
+                    <div id="geneList" class="gene-list"></div>
+                </div>
+
+                <!--############################# plot-buttons  ############################## -->
+
+
+                <div class="plot-buttons">
+                    <button id="heatMapBtn">Heat Map</button>
+                    <button id="barPlotBtn">Bar Plot</button>
+                </div>
+
+                <!--############################# Generate  ############################## -->
+
+
+                <button id="generateBtn"><span>Generate</span></button>
+            </div>
+    <!--############################# right-panel   ############################## -->
+
+
+            <div class="right-panel">
+                <!--############################# graph-display   ############################## -->
+
+                <div id="graphDisplay" class="graph-display">
+                    <img src="penguin.gif" alt="bioinfo_image" class="visualization-image">
+                </div>
+
+                <!--############################# status-bar  logStatus downloadBtn result bar ############################## -->
+
+
+                <div class="status-bar">
+                    
+                    <div id="logStatus">Selected Paramters</div>
+                    <button id="downloadBtn" disabled>Screenshot</button>
+                </div>
+
+                <div class="results-bar">
+                    <div id="results">
+                        <table id="resultsTable">
+                            <thead>
+                                <tr id="tableHeader"></tr>
+                            </thead>
+                            <tbody>
+                                <tr id="tableData"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                  
+            </div>
+
+    <!--############################# confirmationModal  ############################## -->
+
+            <div id="confirmationModal" class="modal" style="display: none;">
+                <article class="modal-container">
+                    <header class="modal-container-header">
+                        <h1 class="modal-container-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path fill="currentColor" d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z" />
+                            </svg>
+                            Confirm Selections
+                        </h1>
+                        <button id="closeModal" class="icon-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+                            </svg>
+                        </button>
+                    </header>
+                    <section class="modal-container-body rtf">
+                        <h2>Selected Parameters</h2>
+                        <p><strong>Capturing KIT:</strong> <span id="modalCapturingKit"></span></p>
+                        <p><strong>Main Sample:</strong> <span id="modalMainSample"></span></p>
+                        <p><strong>Comparison Samples:</strong> <span id="modalComparisonSamples"></span></p>
+                        <p><strong>Gene:</strong> <span id="modalGene"></span></p>
+                        <p><strong>Plot Type:</strong> <span id="modalPlotType"></span></p>
+                        <div class="username-input">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" autocomplete="off" name="text" class="input" placeholder="Username" required>
+                        </div>
+                    </section>
+                    <footer class="modal-container-footer">
+                        <button id="cancelBtn" class="modal-button">Cancel</button>
+                        <button id="confirmBtn" class="modal-button">Confirm</button>
+                    </footer>
+                </article>
+            </div>
+
+
+
+        </div>
+    </div>
+    
+    <script src="web_cna_builder_js3.js"></script>
+
+
+</body>
+</html>
+
